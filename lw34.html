@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Daily Table — Breakfast, Lunch & Dinner Menus</title>
+  <style>
+    /* ===== Page layout ===== */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background-color: #2b2b2b;
+      color: #333;
+      text-align: center;
+      padding: 40px 0 60px 0;
+    }
+
+    h1 {
+      color: #f5e6c8;
+      font-size: 42px;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    .tagline {
+      color: #c9a86a;
+      font-style: italic;
+      margin-bottom: 50px;
+    }
+
+    /* ===== Shared menu styling =====
+       Each menu div is 400px wide by 550px tall,
+       with padding, margin, and a border. */
+    .menu {
+      width: 400px;
+      height: 550px;
+      display: inline-block;
+      vertical-align: top;
+      text-align: left;
+      margin: 20px;                 /* MARGIN: spaces the menus apart */
+      padding: 30px 35px;           /* PADDING: keeps text inside the border */
+      box-sizing: border-box;       /* lets the div stay exactly 400x550 with padding */
+      border: 8px solid;           /* BORDER: frames each menu */
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .menu h2 {
+      text-align: center;
+      font-size: 34px;
+      margin-top: 0;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .hours {
+      text-align: center;
+      font-style: italic;
+      font-size: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .item {
+      margin-bottom: 16px;         /* MARGIN: separates menu items */
+      padding-left: 10px;           /* PADDING: indents item text */
+    }
+
+    .item-name {
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .price {
+      float: right;
+      font-weight: bold;
+    }
+
+    .item-desc {
+      font-size: 13px;
+      font-style: italic;
+      margin-top: 2px;
+    }
+
+    /* ===== Menu 1: BREAKFAST =====
+       Uses background-repeat to tile the texture
+       behind the semi-transparent overlay. */
+    .breakfast-menu {
+      background-color: #f9e4b7;
+      /* BACKGROUND IMAGE #1 (breakfast themed) */
+      background-image: url("https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=400&auto=format");
+      background-repeat: repeat;               /* BACKGROUND PROPERTY: repeat */
+      background-position: center center;
+      background-size: 200px;
+      border-color: #d4a017;
+      color: #4a3000;
+    }
+
+    .breakfast-menu .overlay {
+      background-color: rgba(249, 228, 183, 0.85);
+      padding: 20px;                /* PADDING: readable panel inside the tiled image */
+      border: 1px dashed #b58500;   /* BORDER: decorative inner frame */
+      border-radius: 8px;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    /* ===== Menu 2: LUNCH =====
+       Uses background-position to place the image. */
+    .lunch-menu {
+      /* BACKGROUND IMAGE #2 (sandwich / lunch themed) */
+      background-image: url("https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=800&auto=format");
+      background-repeat: no-repeat;            /* BACKGROUND PROPERTY: no-repeat */
+      background-position: center bottom;      /* BACKGROUND PROPERTY: position */
+      background-size: 400px 300px;           /* image sits along the bottom half */
+      background-color: #eef3e2;
+      border-color: #4a7c2f;
+      color: #22330f;
+    }
+
+    .lunch-menu h2, .lunch-menu .hours { color: #2e4d14; }
+
+    .dinner-menu {
+      background-image: url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&auto=format");
+      background-repeat: no-repeat;           
+      background-position: center center;      
+      background-size: 400px 550px;
+      border-color: #701a1a;
+      color: #f5e6c8;
+    }
+
+    .dinner-menu h2, .dinner-menu .hours { color: #f5e6c8; }
+
+    .dinner-menu .item-desc { color: #d8c7a5; }
+
+    .dinner-overlay {
+      background-color: rgba(20, 10, 10, 0.45);
+      padding: 15px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>The Daily Table</h1>
+  <p class="tagline">Fresh food, served from sunrise to starlight</p>
+
+  
+  <div class="menu breakfast-menu">
+    <div class="overlay">
+      <h2>Breakfast</h2>
+      <p class="hours">Served daily, 6:00 AM – 11:00 AM</p>
+
+      <div class="item">
+        <span class="item-name">Sunrise Scramble</span>
+        <span class="price">$8.50</span>
+        <p class="item-desc">Three farm-fresh eggs, cheddar, and scallions</p>
+      </div>
+
+      <div class="item">
+        <span class="item-name">Buttermilk Pancakes</span>
+        <span class="price">$9.00</span>
+        <p class="item-desc">A short stack with warm maple syrup and butter</p>
+      </div>
+
+      <div class="item">
+        <span class="item-name">Avocado Toast</span>
+        <span class="price">$10.50</span>
+        <p class="item-desc">Sourdough, smashed avocado, chili flakes, lime</p>
+      </div>
+
+      <div class="item">
+        <span class="item-name">Berry Parfait</span>
+        <span class="price">$6.75</span>
+        <p class="item-desc">Greek yogurt, granola, and seasonal berries</p>
+      </div>
+
+      <div class="item">
+        <span class="item-name">Bottomless Coffee</span>
+        <span class="price">$3.25</span>
+        <p class="item-desc">Locally roasted, hot and fresh</p>
+      </div>
+
+      <div class="item">
+        <span class="item-name">Fresh Orange Juice</span>
+        <span class="price">$4.00</span>
+        <p class="item-desc">Squeezed to order</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu lunch-menu">
+    <h2>Lunch</h2>
+    <p class="hours">Served daily, 11:30 AM – 3:00 PM</p>
+
+    <div class="item">
+      <span class="item-name">Classic Club Sandwich</span>
+      <span class="price">$11.00</span>
+      <p class="item-desc">Turkey, bacon, lettuce, tomato on toasted sourdough</p>
+    </div>
+
+    <div class="item">
+      <span class="item-name">Harvest Salad Bowl</span>
+      <span class="price">$9.50</span>
+      <p class="item-desc">Mixed greens, quinoa, cranberries, pecans, vinaigrette</p>
+    </div>
+
+    <div class="item">
+      <span class="item-name">Tomato Basil Soup</span>
+      <span class="price">$6.00</span>
+      <p class="item-desc">Served with a slice of crusty French bread</p>
+    </div>
+
+    <div class="item">
+      <span class="item-name">Garden Veggie Wrap</span>
+      <span class="price">$8.75</span>
+      <p class="item-desc">Hummus, cucumber, peppers, and spinach in a wheat tortilla</p>
+    </div>
+
+    <div class="item">
+      <span class="item-name">Iced Lemon Tea</span>
+      <span class="price">$2.75</span>
+      <p class="item-desc">House-brewed with a splash of lemonade</p>
+    </div>
+
+    <div class="item">
+      <span class="item-name">Sparkling Water</span>
+      <span class="price">$2.50</span>
+      <p class="item-desc">With a twist of lime</p>
+    </div>
+  </div>
+
+  <div class="menu dinner-menu">
+    <h2>Dinner</h2>
+    <p class="hours">Served nightly, 5:00 PM – 10:00 PM</p>
+
+    <div class="dinner-overlay">
+      <div class="item">
+        <span class="item-name">Grilled Salmon</span>
+        <span class="price">$19.50</span>
+        <p class="item-desc">Lemon butter sauce, roasted asparagus</p>
+      </div>
+
+      <div class="item">
+        <span class="item-name">Ribeye Steak</span>
+        <span class="price">$24.00</span>
+        <p class="item-desc">12 oz cut, garlic mashed potatoes, red wine jus</p>
+      </div>
+
+      <div class="item">
+        <span class="item-name">Mushroom Risotto</span>
+        <span class="price">$16.00</span>
+        <p class="item-desc">Cremini mushrooms, parmesan, truffle oil</p>
+      </div>
+
+      <div class="item">
+        <span class="item-name">Roast Half Chicken</span>
+        <span class="price">$17.25</span>
+        <p class="item-desc">Herb rubbed, root vegetables, pan gravy</p>
+      </div>
+
+      <div class="item">
+        <span class="item-name">Chocolate Lava Cake</span>
+        <span class="price">$7.50</span>
+        <p class="item-desc">Warm molten center, vanilla bean ice cream</p>
+      </div>
+
+      <div class="item">
+        <span class="item-name">House Red or White Wine</span>
+        <span class="price">$8.00</span>
+        <p class="item-desc">Glass pours, ask for tonight's selection</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
